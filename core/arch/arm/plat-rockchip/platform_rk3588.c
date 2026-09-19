@@ -82,6 +82,9 @@ int platform_secure_ddr_region(int rgn, paddr_t st, size_t sz)
 	uint32_t ed_mb = ed / SIZE_M(1);
 	uint32_t i = 0;
 
+	if (IS_ENABLED(CFG_RK3588_FIREWALL_BY_BL31))
+		return 0;
+
 	if (!fw_ddr_base || !fw_dsu_base)
 		panic();
 

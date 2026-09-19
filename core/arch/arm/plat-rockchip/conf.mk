@@ -199,6 +199,10 @@ $(call force,CFG_AUTO_MAX_PA_BITS,y)
 $(call force,CFG_CRYPTO_WITH_CE,y)
 $(call force,CFG_ROCKCHIP_OTP,y)
 
+# Skip programming the DDR/DSU firewall for TZDRAM: some BL31s (edk2-rk3588's
+# TF-A, Rockchip's) own the firewall and the S-EL1 write hangs the core.
+CFG_RK3588_FIREWALL_BY_BL31 ?= n
+
 CFG_RK_SECURE_BOOT ?= y
 # Disable CFG_RK_SECURE_BOOT_SIMULATION to actually fuse the hash into the OTP.
 # Enabling this option is necessary to actually enable secure boot, but may
