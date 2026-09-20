@@ -510,6 +510,8 @@
 #define TEE_ECC_CURVE_NIST_P521             0x00000005
 #define TEE_ECC_CURVE_25519                 0x00000300
 #define TEE_ECC_CURVE_SM2                   0x00000400
+/* OP-TEE extension, not in the GlobalPlatform specification */
+#define TEE_ECC_CURVE_SECP256K1             0x00000500
 
 /* Panicked Functions Identification */
 /* TA Interface */
