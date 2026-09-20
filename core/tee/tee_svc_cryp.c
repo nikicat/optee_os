@@ -1881,6 +1881,7 @@ static TEE_Result get_ec_key_size(uint32_t curve, size_t *key_size)
 		break;
 	case TEE_ECC_CURVE_SM2:
 	case TEE_ECC_CURVE_25519:
+	case TEE_ECC_CURVE_SECP256K1:
 		*key_size = 256;
 		break;
 	default:
@@ -3808,6 +3809,7 @@ dh_out:
 			alloc_size = 224;
 			break;
 		case TEE_ECC_CURVE_NIST_P256:
+		case TEE_ECC_CURVE_SECP256K1:
 			alloc_size = 256;
 			break;
 		case TEE_ECC_CURVE_NIST_P384:

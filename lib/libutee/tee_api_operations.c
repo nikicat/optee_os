@@ -2980,7 +2980,8 @@ TEE_Result TEE_IsAlgorithmSupported(uint32_t alg, uint32_t element)
 		     alg == __OPTEE_ALG_ECDSA_P256 ||
 		     alg == TEE_ALG_ECDH_DERIVE_SHARED_SECRET ||
 		     alg == TEE_ALG_ECDSA_SHA256) &&
-		    element == TEE_ECC_CURVE_NIST_P256)
+		    (element == TEE_ECC_CURVE_NIST_P256 ||
+		     element == TEE_ECC_CURVE_SECP256K1))
 			return TEE_SUCCESS;
 		if ((alg == __OPTEE_ALG_ECDH_P384 ||
 		     alg == __OPTEE_ALG_ECDSA_P384 ||

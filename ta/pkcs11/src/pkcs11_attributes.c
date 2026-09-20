@@ -983,6 +983,9 @@ create_ec_priv_key_hidden_attributes(struct obj_attrs **out,
 	case TEE_ECC_CURVE_NIST_P521:
 		ec_curve = MBEDTLS_ECP_DP_SECP521R1;
 		break;
+	case TEE_ECC_CURVE_SECP256K1:
+		ec_curve = MBEDTLS_ECP_DP_SECP256K1;
+		break;
 	default:
 		EMSG("Failed to map EC_PARAMS to supported curve");
 		return PKCS11_CKR_CURVE_NOT_SUPPORTED;

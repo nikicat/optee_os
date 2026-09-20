@@ -106,6 +106,14 @@ static TEE_Result ecc_get_curve_info(uint32_t curve, uint32_t algo,
 		    (algo != TEE_ALG_ECDH_DERIVE_SHARED_SECRET))
 			return TEE_ERROR_BAD_PARAMETERS;
 		break;
+	case TEE_ECC_CURVE_SECP256K1:
+		size_bits = 256;
+		size_bytes = 32;
+		name = "SECP256K1";
+		if ((algo != 0) && (algo != TEE_ALG_ECDSA_SHA256) &&
+		    (algo != TEE_ALG_ECDH_DERIVE_SHARED_SECRET))
+			return TEE_ERROR_BAD_PARAMETERS;
+		break;
 	case TEE_ECC_CURVE_SM2:
 		size_bits = 256;
 		size_bytes = 32;
